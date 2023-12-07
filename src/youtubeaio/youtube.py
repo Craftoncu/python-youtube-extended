@@ -18,6 +18,7 @@ from youtubeaio.models import (
     YouTubePlaylistItem,
     YouTubeSubscription,
     YouTubeVideo,
+    SuperChatEvent,
 )
 from youtubeaio.types import (
     AuthScope,
@@ -263,6 +264,22 @@ class YouTube:
             "subscriptions",
             param,
             YouTubeSubscription,
+        ):
+            yield item  # type: ignore[misc]
+
+    async def get_super_chats_events(
+        self,
+    ) -> AsyncGenerator[SuperChatEvent, None]:
+        """Get super-chats for authenticated channel."""
+        param = {
+            "part": "snippet",
+            "mine": "true",
+        }
+        async for item in self._build_generator(
+            "GET",
+            "superChatEvents",
+            param,
+            SuperChatEvent,
         ):
             yield item  # type: ignore[misc]
 

@@ -1,14 +1,14 @@
 [tool.poetry]
-name = "youtubeaio"
-version = "1.1.4"
+name = "youtubeaio-extended"
+version = "1.2.0"
 description = "Asynchronous Python client for YouTube V3 API."
-authors = ["Joost Lekkerkerker <joostlek@outlook.com>"]
-maintainers = ["Joost Lekkerkerker <joostlek@outlook.com>"]
+authors = ["Joost Lekkerkerker <joostlek@outlook.com>, Daniel Kollmannsberger <daniel@kollmannsberger.de>"]
+maintainers = ["Joost Lekkerkerker <joostlek@outlook.com>, Daniel Kollmannsberger <daniel@kollmannsberger.de>"]
 license = "MIT"
 readme = "README.md"
-homepage = "https://github.com/joostlek/python-youtube"
-repository = "https://github.com/joostlek/python-youtube"
-documentation = "https://github.com/joostlek/python-youtube"
+homepage = "https://github.com/craftoncu/python-youtube-extended"
+repository = "https://github.com/craftoncu/python-youtube-extended"
+documentation = "https://github.com/craftoncu/python-youtube-extended"
 keywords = ["youtube", "api", "async", "client"]
 classifiers = [
   "Development Status :: 5 - Production/Stable",
@@ -21,7 +21,7 @@ classifiers = [
   "Topic :: Software Development :: Libraries :: Python Modules",
 ]
 packages = [
-    { include = "youtubeaio", from = "src" },
+    { include = "youtubeaio-extended", from = "src" },
 ]
 
 [tool.poetry.dependencies]

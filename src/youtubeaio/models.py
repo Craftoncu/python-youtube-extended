@@ -23,6 +23,10 @@ __all__ = [
     "YouTubeChannelContentDetails",
     "YouTubeChannelSnippet",
     "YouTubeChannel",
+    "SuperChatEvent"
+    "SuperChatEventSnippet"
+    "SupporterDetails"
+    "SuperStickerMetadata"
 ]
 
 from youtubeaio.helper import get_duration
@@ -38,6 +42,54 @@ class YouTubeThumbnail(BaseModel):
     width: int = Field(...)
     height: int = Field(...)
 
+
+class SuperStickerMetadata(BaseModel):
+    """Model representing super sticker metadata."""
+
+    sticker_id: str = Field(..., alias="stickerId")
+
+class SupporterDetails(BaseModel):
+    """Model representing supporter details."""
+
+    channel_id: str = Field(..., alias="channelId")
+    channel_url: str = Field(..., alias="channelUrl")
+    display_name: str = Field(..., alias="displayName")
+    profile_image_url: str = Field(..., alias="profileImageUrl")
+
+class SuperChatEventSnippet(BaseModel):
+    """Model representing a superchat snippet."""
+
+    channel_id: str = Field(..., alias="channelId")
+    comment_text: str = Field(..., alias="commentText")
+    created_at: datetime = Field(..., alias="createdAt")
+    amount_micros: int = Field(..., alias="amountMicros")
+    currency: str = Field(...)
+    display_string: str = Field(..., alias="displayString")
+    message_type: int = Field(..., alias="messageType")
+    is_super_sticker_event: bool = Field(..., alias="isSuperStickerEvent")
+
+    nullabe_supporter_details: SupporterDetails = Field(..., alias="supporterDetails")
+    nullable_super_sticker_metadata: SuperStickerMetadata = Field(..., alias="superStickerMetadata")
+
+    @property
+    def supporterDetails(self) -> SupporterDetails:
+        """Return supporter details."""
+        if self.nullabe_supporter_details is None:
+            raise PartMissingError
+        return self.nullabe_supporter_details
+
+    @property
+    def superStickerMetadata(self) -> SuperStickerMetadata:
+        """Return sticker meta."""
+        if self.nullable_super_sticker_metadata is None:
+            raise PartMissingError
+        return self.nullable_super_sticker_metadata
+
+
+class SuperChatEvent(BaseModel):
+    """Model representing a superchat event."""
+    id: str = Field(...)
+    snippet: SuperChatEventSnippet = Field(...)
 
 class YouTubeVideoThumbnails(BaseModel):
     """Model representing video thumbnails."""
