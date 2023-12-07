@@ -19,8 +19,6 @@ jobs:
         uses: actions/checkout@v4.1.1
       - name: 🏗 Set up Poetry
         run: pipx install poetry
-      - name: Lockup Poetry
-        run: poetry lock --no-update
       - name: 🏗 Set up Python ${{ env.DEFAULT_PYTHON }}
         id: python
         uses: actions/setup-python@v4.8.0
