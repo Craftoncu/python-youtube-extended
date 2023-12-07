@@ -21,7 +21,7 @@ classifiers = [
   "Topic :: Software Development :: Libraries :: Python Modules",
 ]
 packages = [
-    { include = "youtubeaio-extended", from = "src" },
+    { include = "youtubeaio", from = "src" },
 ]
 
 [tool.poetry.dependencies]
