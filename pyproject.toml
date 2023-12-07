@@ -2,8 +2,8 @@
 name = "youtubeaio-extended"
 version = "1.2.0"
 description = "Asynchronous Python client for YouTube V3 API."
-authors = ["Joost Lekkerkerker <joostlek@outlook.com>, Daniel Kollmannsberger <daniel@kollmannsberger.de>"]
-maintainers = ["Joost Lekkerkerker <joostlek@outlook.com>, Daniel Kollmannsberger <daniel@kollmannsberger.de>"]
+authors = ["Daniel Kollmannsberger <daniel@kollmannsberger.de>"]
+maintainers = ["Daniel Kollmannsberger <daniel@kollmannsberger.de>"]
 license = "MIT"
 readme = "README.md"
 homepage = "https://github.com/craftoncu/python-youtube-extended"

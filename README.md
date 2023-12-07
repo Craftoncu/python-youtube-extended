@@ -19,7 +19,7 @@ This package allows you to interact with the YouTube V3 API.
 ## Installation
 
 ```bash
-pip install youtubeaio
+pip install youtubeaio-extended
 ```
 
 ## Changelog & Releases
